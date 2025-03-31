@@ -16,8 +16,17 @@ TaskFlow is a modern and intuitive to-do list application designed to help you m
 You can access the deployed application here: [todotaskmaster1.netlify.app](https://todotaskmaster1.netlify.app)
 
 ## Screenshots
+![Screenshot (18)](https://github.com/user-attachments/assets/4515df95-4902-41e1-b650-cf199e3842ac)
+![Screenshot (19)](https://github.com/user-attachments/assets/28e8ee8e-838e-4aea-ac4d-6ecc430f6705)
+![Screenshot (20)](https://github.com/user-attachments/assets/e3a8bb71-7b3f-4dd0-b299-ad2466e64a4f)
+![Screenshot (21)](https://github.com/![Screenshot (22)](https://github.com/user-attachments/assets/f342d160-d5ce-4f32-b77d-1cd0419d2692)
+user-attachments/assets/471a77c7-ebe1-4dc5-a809-b0b051f7704a)
+![Screenshot (22)](https://github.com/user-attachments/assets/805dcea1-3e45-49d8-a9c2-1bace26f8226)
+![Screenshot (23)](https://github.com/user-attachments/assets/f5ff84e1-6730-454a-9e00-a2134da7c8c6)
+![Screenshot (24)](https://github.com/user-attachments/assets/c2d2e86f-feaa-464f-8bac-3e8b9d49761d)
 
-*(You can add screenshots here to showcase your application. If you don't have screenshots, you can omit this section.)*
+
+
 
 ## Installation
 
@@ -37,7 +46,6 @@ To run this application locally:
 * HTML
 * CSS
 * JavaScript
-* Local Storage
 
 ## Usage
 
