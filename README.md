@@ -42,6 +42,8 @@ To run this application locally:
 * HTML
 * CSS
 * JavaScript
+* Node.js setup
+* A simple server that store tasks
 
 ## Usage
 
