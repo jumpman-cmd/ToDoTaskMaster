@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="icon" type="image/png" href="gtodo-todo-list-icon.png">
+</head>
+<body>
+    <div class="border-container">
+        <div class="content">
+            <header>
+                <h1>To-Do-List</h1>
+                <button id="addTaskBtn" class="add-task-btn">+ Add Task</button>
+            </header>
+            <div class="task-summary">
+                <p>0 active tasks, 0 completed</p>
+                <div class="sort-by">
+                    <label for="sortTasks">Sort by:</label>
+                    <select id="sortTasks">
+                        <option value="dueDateEarliest" selected>
+                            <span class="checkmark">&#10004;</span> Due Date (earliest)
+                        </option>
+                        <option value="dueDateLatest">
+                            <span class="checkmark"></span> Due Date (latest)
+                        </option>
+                        <option value="creationDateNewest">
+                            <span class="checkmark"></span> Creation Date (newest)
+                        </option>
+                        <option value="creationDateOldest">
+                            <span class="checkmark"></span> Creation Date (oldest)
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <nav>
+                <button class="nav-btn active" data-section="all">All Tasks</button>
+                <button class="nav-btn" data-section="active">Active</button>
+                <button class="nav-btn" data-section="completed">Completed</button>
+            </nav>
+            <div class="task-list" id="allTasksSection">
+                <img src="book.png" alt="Book" class="book-icon">
+                <div class="no-tasks">
+                    <p>No tasks found</p>
+                    <p>Get started by creating your first task.</p>
+                    <button id="addNewTaskBtn" class="add-new-task-btn">+ Add a New Task</button>
+                </div>
+            </div>
+            <div class="task-list" id="activeTasksSection" style="display: none;">
+                <div class="no-tasks">
+                    <p>No active tasks found.</p>
+                </div>
+            </div>
+            <div class="task-list" id="completedTasksSection" style="display: none;">
+                <div class="no-tasks">
+                    <p>No completed tasks found.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="taskModal" class="task-modal">
+        <div class="task-modal-content">
+            <h2 class="task-modal-title">New Task</h2>
+            <span class="task-modal-close">&times;</span>
+            <label for="taskTitle">Title</label>
+            <input type="text" id="taskTitle" name="taskTitle" placeholder="What needs to be done?">
+            <label for="taskDescription">Description</label>
+            <textarea id="taskDescription" name="taskDescription" placeholder="Add details (optional)"></textarea>
+            <label for="taskDueDate">Due Date</label>
+            <input type="date" id="taskDueDate" name="taskDueDate">
+            <div class="task-modal-buttons">
+                <button id="cancelTaskBtn" class="cancel-btn">Cancel</button>
+                <button id="saveTaskBtn" class="save-btn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

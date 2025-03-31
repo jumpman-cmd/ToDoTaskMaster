@@ -1,0 +1,331 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.border-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    border: 10px solid transparent;
+    border-radius: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    background-image: linear-gradient(to right, #f4f4f4, #f4f4f4), linear-gradient(to right, red, blue);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.border-container::before,
+.border-container::after,
+.border-container::before::before,
+.border-container::before::after,
+.border-container::after::before,
+.border-container::after::after,
+.border-container::before::before::before,
+.border-container::before::before::after,
+.border-container::after::after::before,
+.border-container::after::after::after {
+    content: '\E873';
+    font-family: 'Material Icons';
+    font-size: 30px;
+    position: absolute;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.border-container::before {
+    top: 5px;
+    left: 5px;
+}
+
+.border-container::before::before {
+    top: 5px;
+    right: 5px;
+}
+
+.border-container::before::after {
+    bottom: 5px;
+    left: 5px;
+}
+
+.border-container::after {
+    bottom: 5px;
+    right: 5px;
+}
+
+.border-container::after::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.border-container::after::after {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.border-container::before::before::before {
+    top: 20px;
+    left: 10px;
+}
+
+.border-container::before::before::after {
+    top: 10px;
+    right: 20px;
+}
+
+.border-container::after::after::before {
+    bottom: 10px;
+    left: 20px;
+}
+
+.border-container::after::after::after {
+    bottom: 20px;
+    right: 10px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-task-btn, .add-new-task-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.task-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sort-by select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+nav {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.nav-btn {
+    background-color: transparent;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.nav-btn.active {
+    border-bottom: 2px solid #007bff;
+}
+
+.task-list {
+    text-align: center;
+}
+
+.book-icon {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.no-tasks img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .content {
+        width: 95%;
+    }
+
+    .border-container::before,
+    .border-container::after,
+    .border-container::before::before,
+    .border-container::before::after,
+    .border-container::after::before,
+    .border-container::after::after,
+    .border-container::before::before::before,
+    .border-container::before::before::after,
+    .border-container::after::after::before,
+    .border-container::after::after::after {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .task-summary {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sort-by {
+        margin-top: 10px;
+    }
+}
+
+.sort-by select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000000'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px top 50%;
+    background-size: 16px;
+    padding-right: 30px;
+}
+
+.checkmark {
+    margin-right: 5px;
+    color: #007bff;
+}
+
+.task-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.task-modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.task-modal-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.task-modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.task-modal-close:hover,
+.task-modal-close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea
+{	
+	resize: vertical;
+    height: 100px;
+}
+
+/* New Styles for task items */
+.task-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #007bff; /* Blue border */
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.task-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-description {
+    margin-bottom: 5px;
+    padding-left: 0; /* Remove padding from the left */
+}
+
+.task-dates {
+    display: flex;
+    justify-content: flex-start; /* Start the dates from the left */
+    align-items: center;
+    gap: 20px; /* Add some space between due and creation */
+}
+
+.date-icon, .time-icon {
+    margin-right: 5px;
+}
+
+.task-actions {
+    display: flex;
+}
+
+.task-actions span {
+    cursor: pointer; /* Change cursor to pointer */
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #f0f0f0;
+    margin-left: 5px;
+}
+
+.task-actions span:hover {
+    background-color: #e0e0e0;
+}
